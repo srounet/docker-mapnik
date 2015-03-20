@@ -1,9 +1,3 @@
-sudo docker build -t mapnik .
-sudo docker run -d -P -v $(readlink --canonicalize ressources):/etc/tilestache/ressources/ -v $(readlink --canonicalize ressources/tilestache.cfg):/etc/tilestache/tilestache.cfg --name mapnik mapnik
-sudo docker inspect mapnik
-
-
-
 docker-mapnik
 ===================
 
