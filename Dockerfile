@@ -28,7 +28,6 @@ RUN apt-get install python-pil
 RUN pip install -U modestmaps simplejson werkzeug tilestache --allow-external PIL --allow-unverified PIL
 RUN mkdir -p /etc/tilestache
 COPY etc/run_tilestache.py /etc/tilestache/
-COPY etc/tilestache.cfg /etc/tilestache/tilestache.cfg
 
 
 # Uwsgi
