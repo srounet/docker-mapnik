@@ -4,4 +4,4 @@
 import TileStache
 
 
-application = TileStache.WSGITileServer('/etc/tilestache/tilestache.cfg')
+application = TileStache.WSGITileServer('/etc/tilestache/ressources/tilestache.cfg')
