@@ -18,8 +18,8 @@ RUN apt-get -qq install -y libboost-dev libboost-filesystem-dev libboost-program
 # Mapnik dependencies
 RUN apt-get -qq install --yes libicu-dev libtiff4-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib libharfbuzz-dev
 
-# Mapnik 3.0.6
-RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.6/mapnik-v3.0.6.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v3.0.6 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
+# Mapnik 3.0.7
+RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.7/mapnik-v3.0.7.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v3.0.7 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
 
 # TileStache and dependencies
 RUN ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib

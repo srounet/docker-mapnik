@@ -5,7 +5,7 @@ The purpose of this project is to provide a tile server using mapnik and tilesta
 
 ## Mapnik
 
-Mapnik is a Free Toolkit for developing mapping applications. It’s written in C++ and there are Python bindings to facilitate fast-paced agile development. It can comfortably be used for both desktop and web development
+Mapnik is a Free Toolkit for developing mapping applications. It's written in C++ and there are Python bindings to facilitate fast-paced agile development. It can comfortably be used for both desktop and web development
 
 ## TileStache
 
@@ -13,7 +13,7 @@ TileStache is a Python-based server application that can serve up map tiles base
 
 ## Building docker-mapnik
 
-Running this will build a docker image with mapnik 3.0.6 and TileStache.
+Running this will build a docker image with mapnik 3.0.7 and TileStache.
 
     git clone https://github.com/srounet/docker-mapnik
     cd docker-mapnik
