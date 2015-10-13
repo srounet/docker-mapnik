@@ -16,10 +16,10 @@ RUN apt-get -qq install --yes build-essential openssh-server sudo software-prope
 RUN apt-get -qq install -y libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-system-dev libboost-thread-dev
 
 # Mapnik dependencies
-RUN apt-get -qq install --yes libicu-dev libtiff4-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib
+RUN apt-get -qq install --yes libicu-dev libtiff4-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib libharfbuzz-dev
 
-# Mapnik 2.2.0
-RUN curl -s http://mapnik.s3.amazonaws.com/dist/v2.2.0/mapnik-v2.2.0.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v2.2.0 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
+# Mapnik 3.0.6
+RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.6/mapnik-v3.0.6.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v3.0.6 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
 
 # TileStache and dependencies
 RUN ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
