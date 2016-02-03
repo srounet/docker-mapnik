@@ -23,7 +23,7 @@ RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.9/mapnik-v3.0.9.tar.bz2 | 
 
 # TileStache and dependencies
 RUN ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
-RUN cd /tmp/ && curl --insecure -Os https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py && python get-pip.py
+RUN cd /tmp/ && curl -Os https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 RUN apt-get install python-pil
 RUN pip install -U modestmaps simplejson werkzeug tilestache --allow-external PIL --allow-unverified PIL
 RUN mkdir -p /etc/tilestache
