@@ -16,7 +16,7 @@ RUN apt-get -qq install --yes build-essential openssh-server sudo software-prope
 RUN apt-get -qq install -y libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-system-dev libboost-thread-dev
 
 # Mapnik dependencies
-RUN apt-get -qq install --yes libicu-dev libtiff4-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib libharfbuzz-dev
+RUN apt-get -qq install --yes libicu-dev libtiff5-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib libharfbuzz-dev
 
 # Mapnik 3.0.9
 RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.9/mapnik-v3.0.9.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v3.0.9 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
