@@ -1,6 +1,6 @@
 # Mapnik for Docker
 
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Fabien Reboia<srounet@gmail.com>
 
 ENV LANG C.UTF-8
