@@ -4,6 +4,7 @@ FROM ubuntu:16.04
 MAINTAINER Fabien Reboia<srounet@gmail.com>
 
 ENV LANG C.UTF-8
+ENV MAPNIK_VERSION 3.0.10
 RUN update-locale LANG=C.UTF-8
 
 # Update and upgrade system
@@ -19,7 +20,7 @@ RUN apt-get -qq install -y libboost-dev libboost-filesystem-dev libboost-program
 RUN apt-get -qq install --yes libicu-dev libtiff5-dev libfreetype6-dev libpng12-dev libxml2-dev libproj-dev libsqlite3-dev libgdal-dev libcairo-dev python-cairo-dev postgresql-contrib libharfbuzz-dev
 
 # Mapnik 3.0.9
-RUN curl -s https://mapnik.s3.amazonaws.com/dist/v3.0.9/mapnik-v3.0.9.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v3.0.9 && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
+RUN curl -s https://mapnik.s3.amazonaws.com/dist/v${MAPNIK_VERSION}/mapnik-v${MAPNIK_VERSION}.tar.bz2 | tar -xj -C /tmp/ && cd /tmp/mapnik-v${MAPNIK_VERSION} && python scons/scons.py configure JOBS=4 && make && make install JOBS=4
 
 # TileStache and dependencies
 RUN ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
